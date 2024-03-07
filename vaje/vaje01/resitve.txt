@@ -1,0 +1,69 @@
+#include <stdio.h>
+int main() {
+	int a = getchar() - '0';
+	getchar();
+	int b = getchar() - '0';
+	
+	int vsota = (a + b) % 10;
+	
+	putchar(vsota + '0');
+	putchar('\n');
+	return 0;
+}
+
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+	int dolzinaZaporedja = getchar() - '0';
+	getchar(); // presledek
+	
+	bool vsaEnaka = true;
+	int prvo = -1;
+	for(int i = 0; i < dolzinaZaporedja; i++) {
+		int stevilo = getchar() - '0';
+		getchar();
+		if(i == 0) {
+			prvo = stevilo;
+		} else if (stevilo != prvo) {
+			vsaEnaka = false;
+		}
+	}
+	
+	/*if(vsaEnaka) {
+		putchar('1');
+	} else {
+		putchar('0');
+	}*/
+	
+	putchar(vsaEnaka ? '1' : '0');	
+	putchar('\n');
+	return 0;
+}
+
+#include <stdio.h>
+
+int main() {
+	int dolzinaZaporedja = getchar() - '0';
+	getchar(); // presledek
+	
+	int najvecje = -1; //največje število doslej
+	int drugoNajvecje = -1; // drugoNajvecjeSteviloDoslej
+	
+	for(int i = 0; i < dolzinaZaporedja; i++) {
+		int stevilo = getchar() - '0';
+		getchar();
+		
+		if(stevilo > najvecje) {
+			// <stevilo> je novi prvak in doslej najvecje postane drugo najvecje
+			drugoNajvecje = najvecje;
+			najvecje = stevilo;
+		} else if (stevilo > drugoNajvecje) {
+			// <stevilo> je novi "podprvak"
+			drugoNajvecje = stevilo;
+		}
+	}	
+	putchar(drugoNajvecje + '0');
+	putchar('\n');	
+	return 0;
+}
