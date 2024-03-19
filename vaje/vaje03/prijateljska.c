@@ -1,16 +1,15 @@
+#include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include <math.h>
 
-
-int vsotaPravihDeliteljev(int st){
+int vsotaPravihDeliteljev(int st) {
     int vsota = 0;
-    
-    for(int i = 1; i <= sqrt(st); i++){
-        if(st%i == 0){
+
+    for (int i = 1; i <= sqrt(st); i++) {
+        if (st % i == 0) {
             vsota += i;
-            if(st / i != i && st / i != st){
-                vsota += st/i;
+            if (st / i != i && st / i != st) {
+                vsota += st / i;
             }
         }
     }
@@ -22,12 +21,10 @@ int main() {
     scanf("%d", &n);
     int kandidat = vsotaPravihDeliteljev(n);
 
-    if (vsotaPravihDeliteljev(kandidat) == n){
+    if (vsotaPravihDeliteljev(kandidat) == n) {
         printf("%d\n", kandidat);
-    }
-    else {
+    } else {
         printf("NIMA\n");
     }
     return 0;
 }
-
