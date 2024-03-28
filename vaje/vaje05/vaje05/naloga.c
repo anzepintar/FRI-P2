@@ -26,7 +26,7 @@ int vsota(int *zac, int *kon) {
 
 void indeksInKazalec(int *t, int *indeks, int **kazalec) {
     if (*indeks == -1) {
-        *indeks = t - *kazalec;
+        *indeks = *kazalec -t;
     } else {
         *kazalec = t + *indeks;
     }
@@ -35,8 +35,18 @@ void indeksInKazalec(int *t, int *indeks, int **kazalec) {
 void frekvenceCrk(char *niz, int **frekvence) {
     int *t = (int *)calloc(26, sizeof(int));
     *frekvence = t;
-    char *i = niz;
-    while (*i != '\0') {
+    char *p = niz;
+    while (*p!='\0') {
+        char znak = *p;
+        if((znak >= 'A' && znak <= 'Z') || (znak >= 'a' && znak <= 'z')){
+            int indeks = (znak >= 'a') ? (znak -'a') : (znak - 'A');
+            t[indeks]++;
+        }
+        p++;
+    
+    }
+    *frekvence = t;
+    /*while (*i != '\0') {
         if (*i >= 97) {
             int indeks = *i - 97;
             t[indeks]++;
@@ -45,7 +55,8 @@ void frekvenceCrk(char *niz, int **frekvence) {
             t[indeks]++;
         }
         i++;
-    }
+    }*/
+
 
     /*while(*(niz+i)!='\0'){
         if(*(niz+i)>=97){
