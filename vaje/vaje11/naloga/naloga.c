@@ -55,11 +55,14 @@ Vozlisce *vstaviUrejenoR(Vozlisce *zacetek, int element) {
         novo->naslednje = zacetek;
         return novo;
     }
-    // samo sprehod po seznamu
-    // if (zacetek == NULL || element <= zacetek->podatek) {return zacetek;}
 
     zacetek->naslednje = vstaviUrejenoR(zacetek->naslednje, element);
     return zacetek;
+
+    // samo sprehod po seznamu
+    // if (zacetek == NULL || element <= zacetek->podatek) {return zacetek;}
+    // zacetek->naslednje = vstaviUrejenoR(zacetek->naslednje, element);
+    // return zacetek;
 }
 
 #ifndef test
