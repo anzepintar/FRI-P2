@@ -1,0 +1,15 @@
+Najdaljša vrstica
+Naloga
+Napišite program, ki najdaljšo vrstico podane vhodne datoteke (skupaj z zaključnim zna-
+kom \n) prepiše v podano izhodno datoteko. Če je takih vrstic več, naj prepiše prvo med
+njimi. Nobena vrstica ni daljša od 106 znakov (vštevši znak \n).
+Vhodna in izhodna datoteka sta podani kot argumenta ukazne vrstice. Prvi argument je
+pot do vhodne, drugi pa pot do izhodne datoteke.
+Na primer, če program pokličemo kot
+./najdaljsaVrstica vrba.txt naj.txt
+pri čemer ima datoteka vrba.txt vsebino
+O Vrba!
+srecna draga
+vas domaca
+potem mora program ustvariti datoteko naj.txt z vsebino
+srecna draga
