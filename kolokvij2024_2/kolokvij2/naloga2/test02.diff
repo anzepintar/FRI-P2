@@ -1,0 +1,13 @@
+1,5c1,6
+< priimek
+< Novak
+< Mihevc
+< Novak
+< Debeljak
+---
+> priimek,ime
+> Novak,Janez
+> Mihevc,Maja
+> Novak,Miha
+> Debeljak,Tina
+> Breznik,Miha
