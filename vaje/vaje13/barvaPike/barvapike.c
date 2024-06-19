@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
     int x, y;
     sscanf(argv[2], "%d", &x);
     sscanf(argv[3], "%d", &y);
-    //printf("%s %d %d\n", ime, x, y);
+    // printf("%s %d %d\n", ime, x, y);
     FILE *datIN = fopen(ime, "rb");
     char *format = malloc(sizeof(char) * 5);
     fscanf(datIN, "%s", format);
@@ -17,9 +17,10 @@ int main(int argc, char *argv[]) {
     fgetc(datIN);
 
     unsigned char *vsebina = malloc(sizeof(unsigned char) * w * h * 3);
-    fread(vsebina, sizeof(unsigned char), w*h*3, datIN);
-    int indeks = x*w*3+y*3;
-    printf("%d %d %d", vsebina[indeks], vsebina[indeks+1], vsebina[indeks+2]);
+    fread(vsebina, sizeof(unsigned char), w * h * 3, datIN);
+    int indeks = x * w * 3 + y * 3;
+    printf("%d %d %d", vsebina[indeks], vsebina[indeks + 1],
+           vsebina[indeks + 2]);
 
     return 0;
 }
